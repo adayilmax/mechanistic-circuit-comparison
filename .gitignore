@@ -1,0 +1,11 @@
+data/
+results/metrics/
+__pycache__/
+*.py[oc]
+.venv/
+.uv/
+build/
+dist/
+*.egg-info/
+.DS_Store
+results/checkpoints/
