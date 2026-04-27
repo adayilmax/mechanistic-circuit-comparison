@@ -50,8 +50,8 @@ Phase 3 (`scripts/03_logit_lens.py`) projects the residual stream at every posit
 
 The asymmetry is reproducible and survives a hyperparameter sweep. An earlier configuration with `weight_decay=1.0` (the value Nanda et al. (2023) report as the primary driver of grokking in modular arithmetic) was abandoned because subtraction collapsed entirely under it, with high initialization failure rates, oscillatory behaviour near the grokking threshold that prevented the sustained-criterion from being satisfied, and a 0.87 plateau that did not improve across 5,000 epochs. Reducing weight decay to 0.5 was a deliberate methodological choice to recover sufficient grokked subtraction runs for circuit comparison while preserving the qualitative asymmetry; the asymmetry persists at the lower setting, which rules out over-regularisation as the cause. Eleven addition seeds had to be tried (seeds 0–10) to collect 10 valid runs; fifteen subtraction seeds (0–14) were needed to collect the same number of valid runs.
 
-![Grokking curves for the 9 grokked addition seeds](results/plots/grokking_curves_addition.png)
-*Train accuracy (blue) reaches near-1.0 within ~100 epochs while test accuracy (orange) lingers near zero, then transitions sharply at the per-seed grokking epoch (red dashed). Seed 7 took 1,536 epochs; seed 9 took 162. The variance in grokking time across seeds is itself a feature, not noise: the seed used for initialization changes the basin trajectory by an order of magnitude.*
+![Logit lens profiles for the 9 grokked addition seeds](results/plots/logit_lens_addition.png)
+*All 9 grokked addition seeds (light blue) produce near-identical logit lens profiles: flat at random chance through the five intermediate states, then a sharp jump at resid_b. The spread at resid_b (0.839 to 0.950) reflects the seed-to-seed variance in how completely the circuit has formed, not a difference in where computation happens.*
 
 ### Logit Lens
 
