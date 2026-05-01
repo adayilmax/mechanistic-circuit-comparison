@@ -1,4 +1,4 @@
-# Circuits and Tasks: A Mechanistic Comparison of Modular Addition and Subtraction in Transformers
+# Mechanistic Circuit Comparison of Modular Arithmetic Tasks in Transformers
 
 *Do structurally similar arithmetic tasks converge on the same internal circuit, or do they find independent solutions?*
 
